@@ -1,40 +1,106 @@
-# Microsoft Teams Device State Alert
+# Microsoft Teams Device State Alert (No-Code Setup)
 
 ## 📌 Overview
 
-This solution provides real-time monitoring of Microsoft Teams devices and triggers alerts when devices enter a critical or offline state.
+This solution configures a **device state alert** in Microsoft Teams Admin Center.
 
-The alerting rule is configured using Microsoft Teams Admin Center and sends notifications directly to a Teams channel for faster incident response.
+It sends notifications when a Teams device becomes:
+- Offline
+- Critical
+
+No Power Automate or scripting is used — this is a **built-in Teams Admin feature**.
 
 ---
 
 ## 🎯 Purpose
 
-This automation ensures proactive monitoring of Teams-certified devices to prevent disruption in collaboration services.
-
-### Key benefits:
-
-- ✅ Real-time alerting for device issues  
-- ✅ Faster incident detection and response  
-- ✅ Centralized alerting via Teams channel  
-- ✅ No-code configuration using Teams Admin Center  
-- ✅ Improved device reliability and monitoring  
+- Monitor Teams device health in real-time  
+- Get instant alerts for device failures  
+- Improve response time for issues  
 
 ---
 
-## 🧭 Alert Flow Diagram
+## ⚙️ Step-by-Step Configuration (UI Setup)
 
-```mermaid
-flowchart TD
+Follow these steps in **Teams Admin Center**:
 
-A[Device Monitoring System] --> B[Evaluate Device Health Status]
+---
 
-B --> C{Is Device Status<br/>Offline or Critical?}
+## 1️⃣ Create Alert Rule
 
-C -- Yes --> D[Trigger Alert Rule]
+- Go to: **Teams Admin Center**
+- Navigate to: **Analytics & Reports → Alerts → Alert rules**
+- Click: **Create Rule**
 
-D --> E[Send Channel Notification<br/>MonitoringAlerts Channel]
+---
 
-C -- No --> F[No Action]
+## 2️⃣ Configure Rule Type
 
-E --> F
+- Select:
+  - ✅ **Device Management**
+
+---
+
+## 3️⃣ Configure Condition
+
+Set the condition for alert:
+
+- **Parameter:** Device health status  
+- **Operator:** IN  
+- **Value:**  
+  - Offline  
+  - (Optional) Critical  
+
+👉 This means alert will trigger when device is offline or unhealthy.
+
+---
+
+## 4️⃣ Configure Scope
+
+- **Evaluation Frequency:** Real-time  
+- **Device Users:** Select required users/devices  
+
+👉 Example: Add all meeting rooms or Teams phones
+
+---
+
+## 5️⃣ Configure Action (Notification)
+
+- Enable:
+  - ✅ Channel Alert  
+
+- Select:
+  - **Team:** Admin Alerts and Notifications  
+  - **Channel:** MonitoringAlerts  
+
+👉 Alerts will appear directly in Teams channel.
+
+(Optional)
+- Webhook can be added for external systems
+
+---
+
+## 6️⃣ Enable Rule
+
+- Set:
+  - ✅ Status → Active  
+- Click: **Save**
+
+---
+
+## ✅ Final Result
+
+Whenever a device becomes:
+- Offline  
+- Critical  
+
+👉 A message is posted in Teams channel:
+**MonitoringAlerts**
+
+---
+
+## 🖼️ Configuration Screenshots
+
+### Rule Setup
+![Rule](images/rule.png)
+
