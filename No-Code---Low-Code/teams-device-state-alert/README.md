@@ -70,8 +70,8 @@ Set the condition for alert:
   - ✅ Channel Alert  
 
 - Select:
-  - **Team:** Admin Alerts and Notifications  
-  - **Channel:** MonitoringAlerts  
+  - **Team:** Your_Teams_name  
+  - **Channel:** Your_Channel_name  
 
 👉 Alerts will appear directly in Teams channel.
 
@@ -95,12 +95,4 @@ Whenever a device becomes:
 - Critical  
 
 👉 A message is posted in Teams channel:
-**MonitoringAlerts**
-
----
-
-## 🖼️ Configuration Screenshots
-
-### Rule Setup
-![Rule](images/rule.png)
-
+**Your Channel Name**
